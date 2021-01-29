@@ -1,0 +1,99 @@
+
+package de.dat.glassrep.services.vehicleidentificationservice;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java-Klasse für anonymous complex type.
+ * 
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element ref="{http://www.dat.de/vxs}AdditionalService" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="TotalAdditionalServicePrice" type="{http://www.dat.de/vxs}fieldDecimal" minOccurs="0" form="qualified"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "additionalService",
+    "totalAdditionalServicePrice"
+})
+@XmlRootElement(name = "AdditionalServices")
+public class AdditionalServices {
+
+    @XmlElement(name = "AdditionalService")
+    protected List<AdditionalService> additionalService;
+    @XmlElement(name = "TotalAdditionalServicePrice")
+    protected FieldDecimal totalAdditionalServicePrice;
+
+    /**
+     * Gets the value of the additionalService property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the additionalService property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAdditionalService().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link AdditionalService }
+     * 
+     * 
+     */
+    public List<AdditionalService> getAdditionalService() {
+        if (additionalService == null) {
+            additionalService = new ArrayList<AdditionalService>();
+        }
+        return this.additionalService;
+    }
+
+    /**
+     * Ruft den Wert der totalAdditionalServicePrice-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FieldDecimal }
+     *     
+     */
+    public FieldDecimal getTotalAdditionalServicePrice() {
+        return totalAdditionalServicePrice;
+    }
+
+    /**
+     * Legt den Wert der totalAdditionalServicePrice-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FieldDecimal }
+     *     
+     */
+    public void setTotalAdditionalServicePrice(FieldDecimal value) {
+        this.totalAdditionalServicePrice = value;
+    }
+
+}
